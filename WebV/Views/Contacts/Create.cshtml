@@ -1,0 +1,111 @@
+﻿@model WebV.Models.Contact
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background: #e8e8e8;
+    }
+
+    .form-area {
+        padding-top: 7%;
+    }
+
+    .row.single-form {
+        box-shadow: 0 2px 20px -5px rgba(0,0,0,0.5);
+        background: #fff;
+    }
+
+    .left {
+        background: blueviolet;
+        padding: 200px 98px;
+    }
+
+        .left h3 {
+            font-family: poppins;
+            color: #fff;
+            font-weight: 700;
+            font-size: 48px;
+        }
+
+            .left h3 span {
+                font-weight: 100;
+            }
+
+    .right {
+        padding: 70px 100px;
+        position: relative;
+    }
+
+        .right i {
+            position: absolute;
+            font-size: 80px;
+            left: -27px;
+            top: 40%;
+            color: #fff;
+        }
+
+    .form-control {
+        border: 2px solid #000000;
+    }
+
+    .right button {
+        border: none;
+        border-radius: 50px;
+        width: 120px;
+        background: #252525;
+        color: #fff;
+        padding: 15px 0;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+        .right button:hover {
+            background: #252525;
+        }
+</style>
+
+<body>
+    <div class="form-area">
+        <div class="container">
+            <div class="row single-form g-0">
+                <div class="col-sm-12 col-lg-6">
+                    <div class="left">
+                        <h3><span>Contact Us</span> <br /></h3>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                    <div class="right">
+                        <i class="fa fa-caret-left"></i>
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group mb-3">
+                                <label asp-for="ContactName" class="control-label">Name</label>
+                                <input asp-for="ContactName" type="text" class="form-control">
+                                <span asp-validation-for="ContactName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label asp-for="ContactMessage" class="control-label">Message</label>
+                                <textarea asp-for="ContactMessage" class="form-control"></textarea>
+                                <span asp-validation-for="ContactMessage" class="text-danger"></span>
+                            </div>
+                            <button type="submit" value="Create" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
